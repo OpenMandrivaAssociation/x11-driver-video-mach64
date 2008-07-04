@@ -1,6 +1,6 @@
 Name: x11-driver-video-mach64
 Version: 6.8.0
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 1
 Summary: X.org driver for ATI Mach64 
 Group: System/X11
@@ -17,7 +17,7 @@ BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: GL-devel
 
 Conflicts: xorg-x11-server < 7.0
-Conflicts: x11-driver-video-ati <= 6.8.0
+Conflicts: x11-driver-video-ati <= 1:6.8.0
 
 %description
 x11-driver-video-mach64 is the X.org driver for ATI Mach64.
