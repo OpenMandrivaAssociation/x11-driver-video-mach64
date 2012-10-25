@@ -13,6 +13,8 @@ Patch0:		mach64-6.8.1-defaultdepth.patch
 Patch1:		0001-mach64-fix-build-on-32-bit.patch
 # from Fedora: allow Render even when doing ShadowFB
 Patch2:		mach64-6.9.3-shadowfb.patch
+# from Fedora: fix building with neither XAA nor EXA
+Patch3:		mach64-6.9.3-fix-no-exa-build.patch
 
 BuildRequires:	libdrm-devel >= 2.0
 BuildRequires:	x11-proto-devel >= 1.0.0
@@ -33,6 +35,7 @@ x11-driver-video-mach64 is the X.org driver for ATI Mach64.
 %patch0 -p1 -b .depth~
 %patch1 -p1 -b .fix32~
 %patch2 -p1 -b .shadowfb~
+%patch3 -p1 -b .ftbfs~
 
 autoreconf -ifs
 
