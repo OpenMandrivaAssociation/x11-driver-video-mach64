@@ -40,7 +40,7 @@ x11-driver-video-mach64 is the X.org driver for ATI Mach64.
 autoreconf -ifs
 
 %build
-%configure
+%configure	--disable-exa
 %make
 
 %install
