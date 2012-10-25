@@ -11,6 +11,8 @@ Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-mach6
 Patch0:		mach64-6.8.1-defaultdepth.patch
 # from Fedora: fix tvout code only building on 32-bit
 Patch1:		0001-mach64-fix-build-on-32-bit.patch
+# from Fedora: allow Render even when doing ShadowFB
+Patch2:		mach64-6.9.3-shadowfb.patch
 
 BuildRequires:	libdrm-devel >= 2.0
 BuildRequires:	x11-proto-devel >= 1.0.0
@@ -30,6 +32,8 @@ x11-driver-video-mach64 is the X.org driver for ATI Mach64.
 %setup -qn xf86-video-mach64-%{version}
 %patch0 -p1 -b .depth~
 %patch1 -p1 -b .fix32~
+%patch2 -p1 -b .shadowfb~
+
 autoreconf -ifs
 
 %build
