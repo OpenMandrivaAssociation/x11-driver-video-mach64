@@ -7,7 +7,9 @@ Group:		System/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-mach64-%{version}.tar.bz2
-
+# PATCH-FIX-UPSTREAM U_Deal-with-pPict-pDrawable-NULL-for-source-only-pictures.patch bnc#865607 -- fixes crash in mach64 driver
+Patch0:		U_Deal-with-pPict-pDrawable-NULL-for-source-only-pictures.patch
+Patch1:		U_mach64-fix-build-probably-not-required-with-pci-acce.patch
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	pkgconfig(xorg-macros)

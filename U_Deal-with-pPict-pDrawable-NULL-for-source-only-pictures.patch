@@ -1,0 +1,33 @@
+From 2c83b465b336a012f2d2716940bf483358388000 Mon Sep 17 00:00:00 2001
+From: Matthieu Herrb <matthieu.herrb@laas.fr>
+Date: Mon, 03 Jun 2013 17:01:23 +0000
+Subject: Deal with pPict->pDrawable == NULL for source-only pictures.
+
+Falling back to software rendering for such source pictures
+(solid/gradient).
+
+Signed-off-by: Matthieu Herrb <matthieu.herrb@laas.fr>
+Reviewed-by: Alex Deucher <alexander.deucher@amd.com>
+---
+diff --git a/src/atimach64render.c b/src/atimach64render.c
+index ffde2cb..8d259fa 100644
+--- a/src/atimach64render.c
++++ b/src/atimach64render.c
+@@ -339,10 +339,13 @@ Mach64GetOrder(int val, int *shift)
+ static Bool
+ Mach64CheckTexture(PicturePtr pPict)
+ {
+-    int w = pPict->pDrawable->width;
+-    int h = pPict->pDrawable->height;
++    int h,w;
+     int l2w, l2h, level, i;
+ 
++    if (pPict->pDrawable == NULL)
++	    return FALSE;
++    w = pPict->pDrawable->width;
++    h = pPict->pDrawable->height;
+     for (i = 0; i < MACH64_NR_TEX_FORMATS; i++) {
+         if (Mach64TexFormats[i].pictFormat == pPict->format)
+             break;
+--
+cgit v0.9.0.2-2-gbebe
