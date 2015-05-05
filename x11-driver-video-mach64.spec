@@ -1,3 +1,4 @@
+%define _disable_ld_no_undefined 1
 Name:		x11-driver-video-mach64
 Epoch:		1
 Version:	6.9.5
