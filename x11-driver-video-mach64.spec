@@ -20,7 +20,7 @@ x11-driver-video-mach64 is the X.org driver for ATI Mach64.
 
 %prep
 %setup -qn xf86-video-mach64-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %configure
