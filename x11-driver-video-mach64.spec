@@ -2,7 +2,7 @@
 Name:		x11-driver-video-mach64
 Epoch:		1
 Version:	6.9.7
-Release:	3
+Release:	4
 Summary:	X.org driver for ATI Mach64 
 Group:		System/X11
 License:	MIT
