@@ -6,8 +6,8 @@ Release:	1
 Summary:	X.org driver for ATI Mach64 
 Group:		System/X11
 License:	MIT
-Url:		http://xorg.freedesktop.org
-Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-mach64-%{version}.tar.xz
+Url:		https://xorg.freedesktop.org
+Source0:	https://xorg.freedesktop.org/releases/individual/driver/xf86-video-mach64-%{version}.tar.xz
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	pkgconfig(xorg-macros)
